@@ -15,26 +15,26 @@ export function HeroSection() {
       <Container>
         <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-10">
           <div className="lg:col-span-6">
-            <Reveal>
+            <Reveal immediate>
               <span className="flex items-center gap-3 text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-teal">
                 <span className="h-px w-7 bg-teal/50" aria-hidden="true" />
                 {hero.eyebrow}
               </span>
             </Reveal>
 
-            <Reveal delay={0.06}>
+            <Reveal immediate delay={0.06}>
               <h1 className="mt-6 font-display text-[clamp(2.3rem,5vw,3.9rem)] leading-[1.08] text-heading">
                 {hero.headline}
               </h1>
             </Reveal>
 
-            <Reveal delay={0.1}>
+            <Reveal immediate delay={0.1}>
               <p className="mt-6 max-w-lg text-[1.05rem] leading-8 text-body">
                 {hero.supporting}
               </p>
             </Reveal>
 
-            <Reveal delay={0.14}>
+            <Reveal immediate delay={0.14}>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
                 <AppointmentButton size="lg">
                   {hero.primaryCta.label}
@@ -51,7 +51,7 @@ export function HeroSection() {
           </div>
 
           <div className="lg:col-span-6">
-            <Reveal delay={0.1} y={24}>
+            <Reveal immediate delay={0.1} y={24}>
               <div className="relative aspect-[4/5] overflow-hidden rounded-xl bg-sage shadow-card">
                 <Image
                   src={hero.image.src}
@@ -78,7 +78,7 @@ export function HeroSection() {
               </div>
             </Reveal>
 
-            <Reveal delay={0.16}>
+            <Reveal immediate delay={0.16}>
               <div className="mt-5 flex items-center gap-5">
                 <span className="relative size-16 shrink-0 overflow-hidden rounded-lg bg-sage">
                   <Image

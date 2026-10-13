@@ -14,6 +14,8 @@ type RevealProps = {
   y?: number;
   duration?: number;
   stagger?: number;
+  /** Play on mount instead of on scroll — for above-the-fold content. */
+  immediate?: boolean;
 };
 
 export function Reveal({
@@ -24,6 +26,7 @@ export function Reveal({
   y = motion.reveal.y,
   duration = motion.duration.slow,
   stagger = motion.reveal.stagger,
+  immediate = false,
 }: RevealProps) {
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -47,12 +50,14 @@ export function Reveal({
           delay,
           stagger: selector ? stagger : 0,
           ease: motion.ease.soft,
-          scrollTrigger: {
-            trigger: el,
-            start: "top 88%",
-            end: "bottom top",
-            toggleActions: "play reset play reset",
-          },
+          scrollTrigger: immediate
+            ? undefined
+            : {
+                trigger: el,
+                start: "top 88%",
+                end: "bottom top",
+                toggleActions: "play reset play reset",
+              },
         });
       });
 
