@@ -9,8 +9,8 @@ export type NavItem = {
 export const headerNav: NavItem[] = [
   { id: "home", label: "Home", href: "#top" },
   { id: "treatments", label: "Treatments", href: "#treatments" },
-  { id: "team", label: "Our Team", href: "#team" },
   { id: "patient-info", label: "Patient Information", href: "#patient-info" },
+  { id: "team", label: "Our Team", href: "#team" },
   { id: "contact", label: "Contact", href: "#contact" },
 ];
 

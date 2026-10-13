@@ -8,6 +8,9 @@ import { AppointmentButton } from "@/components/ui/AppointmentButton";
 import { MobileNavigation } from "./MobileNavigation";
 import { cn } from "@/lib/utils";
 
+const navItemClass =
+  "inline-flex items-center gap-1.5 border-b-2 pb-1 text-sm font-medium leading-5 transition-colors";
+
 function TreatmentsMenu() {
   const [hovered, setHovered] = useState(false);
   const [clicked, setClicked] = useState(false);
@@ -35,8 +38,8 @@ function TreatmentsMenu() {
           }
         }}
         className={cn(
-          "flex items-center gap-1.5 border-b-2 border-transparent pb-1 text-sm font-medium transition-colors",
-          open ? "border-teal text-teal" : "text-heading hover:text-teal",
+          navItemClass,
+          open ? "border-teal text-teal" : "border-transparent text-heading hover:text-teal",
         )}
       >
         Treatments
@@ -142,7 +145,7 @@ export function Header() {
                       href={item.href}
                       aria-current={activeId === item.id ? "true" : undefined}
                       className={cn(
-                        "border-b-2 pb-1 text-sm font-medium transition-colors",
+                        navItemClass,
                         activeId === item.id
                           ? "border-teal text-teal"
                           : "border-transparent text-heading hover:text-teal",
